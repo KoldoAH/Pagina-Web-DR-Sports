@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<title>DR Sports- Tienda deportiva online</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="author" content="Koldo Aranegui Huarte and Mikel Arrastia">
+		<meta name="description" content="Bienvenidos a la tienda oficial de DR Sports. Descubre la tecnología y comodidad de nuestras prendas.">
+	</head>
+	<style>
+		form{
+			width:300px;
+			padding:25px;
+			border-radius:10px;
+			margin:auto;
+			background-color:#adad85;
+		}
+
+		form label{
+			width:100px;
+			font-weight:bold;
+			display:inline-block;
+			font-size: 25px;
+			padding:10px;
+			margin-left: 75px;
+		}
+
+		form input{
+			width:280px;
+			padding:3px 10px;
+			border:1px solid #f6f6f6;
+			border-radius:3px;
+			background-color:#f6f6f6;
+			margin:8px 0;
+			display:inline-block;
+		}
+
+		form input[type="submit"]{
+			width:100%;
+			padding:8px 16px;
+			margin-top:32px;
+			border:1px solid #000;
+			border-radius:5px;
+			display:block;
+			color:#fff;
+			background-color:#000;
+		} 
+	</style>
+	<body>
+		<form action="index.php" method="POST">
+			<label for="contraseña">Contraseña: </label>
+			<input type="password" name="contraseña" id="contraseña"><br>
+			<input type="hidden" name="accion" value="perfil">
+			<input type="hidden" name="valor" value="5">
+			<input type="submit" value="Aceptar">
+		</form>	
+		<form action="index.php" method="POST">
+			<input type="hidden" name="accion" value="perfil">
+			<input type="hidden" name="valor" value="1">
+			<input type="submit" value="Cancelar">
+		</form>
+	</body>
+</html>

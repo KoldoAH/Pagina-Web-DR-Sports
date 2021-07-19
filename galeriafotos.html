@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<title>DR Sports- Tienda deportiva online</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="author" content="Koldo Aranegui Huarte and Mikel Arrastia">
+		<meta name="description" content="Bienvenidos a la tienda oficial de DR Sports. Descubre la tecnología y comodidad de nuestras prendas.">
+	</head>
+	<style>
+		h1{
+			background-color: #252323;
+			color: #fff;
+			font-size: 20px;
+			text-align:center;
+			padding: 10px;
+		}
+		.logo{
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: 20px;
+			margin-bottom: 20px;
+		}
+	</style>	
+
+	<body>
+		<a href= "http://webalumnos.tlm.unavarra.es:10738/final/index.php"><img src= "DR_Sports_Logo_Negro.png" class = "logo"></a>
+		<!--<h1>DR SPORTS</h1>-->
+		<h1>GALERIA DE FOTOS</h1>
+		<script>
+			function intercambiarFoto(nuevaFotoMediana) {
+				document.getElementById("fotoMediana").src=nuevaFotoMediana.replace("pequenia","mediana");
+			}
+			function fotoGrande(){
+				idFotoMediana= document.getElementById("fotoMediana").src;
+				idFotoGrande= idFotoMediana.replace("mediana","grande");
+				document.getElementById("fotoMediana").src= idFotoGrande;
+			}
+
+		</script>
+
+		<table>
+			<tr><!--<a href= "index.php?accion=galeriaFotosAdmin&valor=1"><img id="fotoMediana" src="##fotografiamediana##"></a>-->
+				<a><img src="##fotografiamediana##" id ="fotoMediana" onclick= "fotoGrande()"></a>
+			</tr>
+			##filagaleria##
+			<tr>
+				<td>
+					<a><img src="##fotografia##" onclick= "intercambiarFoto('##fotografia##')"></a>
+				</td>
+			</tr>
+
+			##filagaleria##
+		</table>
+			
+	</body>
+</html>

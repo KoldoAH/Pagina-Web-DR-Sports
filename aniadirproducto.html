@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<title>DR Sports- Tienda deportiva online</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="author" content="Koldo Aranegui Huarte and Mikel Arrastia">
+		<meta name="description" content="Bienvenidos a la tienda oficial de DR Sports. Descubre la tecnología y comodidad de nuestras prendas.">
+	</head>
+	<style>
+		.logo{
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: 20px;
+			margin-bottom: 20px;
+		}
+		h1{
+			text-align:center;
+		}
+		form{
+			margin-left:42%;
+		}
+		.enlace{
+			width: 7%;
+			padding:8px 16px;
+			margin-top:10px;
+			border:1px solid #000;
+			border-radius:5px;
+			display:block;
+			color:#fff;
+			background-color:#adad85;
+			text-align:center;
+		}
+	</style>
+
+	<body>
+		<a href= "http://webalumnos.tlm.unavarra.es:10738/final/index.php"><img src= "DR_Sports_Logo_Negro.png" class = "logo"></a>
+		<h1>Añadir nuevo producto</h1>
+
+		<form enctype="multipart/form-data" action="index.php" method="POST">
+			<input name="fotoproducto" id = "fotoproducto" type="file"/>
+			<input type="hidden" name="accion" value="administrarproductos">
+			<input type="hidden" name="valor" value="2">
+			<br><br>Categoria: 
+			<select name= "elegircategoriadeporte" id="elegircategoriadeporte">
+				<option value="categoria">Elegir categoría deporte </option>
+				<option value="1">FÚTBOL</option>
+				<option value="2">BALONCESTO</option>
+				<option value="3">SKATE</option>
+			</select>
+			<br><br>
+			<label for="descripcion">Descripción: </label>
+			<input type= "text" name="descripcion" id= "descripcion"><br><br>
+			<label for="precio">Precio: </label>
+			<input type= "text" name="precio" id= "precio"><br><br>
+			<label for="color">Color: </label>
+			<input type= "text" name="color" id= "color"><br><br>
+
+			<input type="submit" name = "subirproducto" value="Aceptar" class = "enlace"/>
+		</form>
+
+	</body>
+</html>

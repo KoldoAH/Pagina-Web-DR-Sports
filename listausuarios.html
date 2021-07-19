@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<title>DR Sports- Tienda deportiva online</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="author" content="Koldo Aranegui Huarte and Mikel Arrastia">
+		<meta name="description" content="Bienvenidos a la tienda oficial de DR Sports. Descubre la tecnología y comodidad de nuestras prendas.">
+	</head>
+	<style>
+		.logo{
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: 20px;
+			margin-bottom: 20px;
+		}
+		.tabla{
+			margin:auto;
+		}
+		h1{
+			text-align: center;
+		}
+		.enlaces{
+			margin-left:35%;
+			padding:10px;
+		}
+	</style>
+	<body>
+		<a href= "http://webalumnos.tlm.unavarra.es:10738/final/index.php"><img src= "DR_Sports_Logo_Negro.png" class = "logo"></a>
+		<h1>
+			LISTA USUARIOS
+		</h1>
+		
+		<table class = "tabla">
+			<tr>
+				<th>ID pedido</th>
+				<th>Nombre usuario</th>
+				<th>ID producto</th>
+			</tr>
+			##listausuarios##
+			<tr>
+				<td>##idusuario##</td>
+				<td>##nombreusuario##</td>
+				<td>##email##</td>
+			</tr>
+		##listausuarios##
+		<div class = "enlaces">
+			<a href="index.php?accion=listausuarios&valor=2">Generar contenido Json</a>
+			<a href="index.php?accion=listausuarios&valor=3">Parsear contenido Json</a>
+			<a href="index.php?accion=listausuarios&valor=4">Subir archivo para añadir usuarios</a>
+		</div>
+
+	</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<title>DR Sports- Tienda deportiva online</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="author" content="Koldo Aranegui Huarte and Mikel Arrastia">
+		<meta name="description" content="Bienvenidos a la tienda oficial de DR Sports. Descubre la tecnología y comodidad de nuestras prendas.">
+
+		
+	</head>
+	<style>
+		.logo{
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: 20px;
+			margin-bottom: 20px;
+		}
+		h1{
+			text-align:center;
+		}
+		form{
+			margin-left:40%;
+		}
+	</style>
+	<body>
+		<a href= "http://webalumnos.tlm.unavarra.es:10738/final/index.php"><img src= "DR_Sports_Logo_Negro.png" class = "logo"></a>
+		<h1>GALERIA DE FOTOS ADMINISTRADOR</h1>
+		<div>
+			<script src="./path/to/dropzone.js"></script>
+
+			<form method="POST" action="index.php" class="dropzone" enctype="multipart/form-data">
+			  	<div class="fallback">
+			   		<input type="file" name="uploadedFile[]" multiple='multiple' />
+			   		<input type="hidden" name="accion" value="galeriaFotosAdmin">
+					<input type="hidden" name="valor" value="2">
+			   		<input type="submit" name="uploadBtn" value="Aceptar">
+			  	</div>
+			</form>
+		</div>
+
+		<script>
+			function intercambiarFoto(nuevaFotoMediana) {
+				document.getElementById("fotoMediana").src=nuevaFotoMediana.replace("pequenia","mediana");
+			}
+			function fotoGrande(){
+				idFotoMediana= document.getElementById("fotoMediana").src;
+				idFotoGrande= idFotoMediana.replace("mediana","grande");
+				document.getElementById("fotoMediana").src= idFotoGrande;
+			}
+				
+		</script>
+
+		<table class = "tabla">
+			<tr><a><img src="##fotografiamediana##" id ="fotoMediana" onclick= "fotoGrande()"></a></tr>
+			
+			##filagaleria##
+			<tr>
+				<td>
+					<a><img src="##fotografia##" onclick= "intercambiarFoto('##fotografia##')"></a>
+				</td>
+				<td>
+					<a href="index.php?accion=galeriaFotosAdmin&valor=3&idfoto=##fotografia##">Eliminar</a>
+				</td>
+			</tr>
+
+			##filagaleria##
+		</table>
+			
+	</body>
+</html>

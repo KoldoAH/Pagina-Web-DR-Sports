@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<title>DR Sports- Tienda deportiva online</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="author" content="Koldo Aranegui Huarte and Mikel Arrastia">
+		<meta name="description" content="Bienvenidos a la tienda oficial de DR Sports. Descubre la tecnología y comodidad de nuestras prendas.">
+	</head>
+
+	<style>
+		
+		#menu{
+			background-color: #252323;
+		}
+		#menu ul{
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+		#menu ul li{
+			display: inline-block;
+		}
+		#menu ul li a{
+			color: white;
+			display:block;
+			padding: 20px 150px;
+			text-decoration: none;
+		}
+		#menu ul li a:hover{
+			background-color: #adad85;
+		}
+
+		.logo{
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: 20px;
+			margin-bottom: 20px;
+		}
+		.titulo{
+			text-align:center;
+		}
+		.tabla{
+			margin:auto;
+		}
+	</style>
+	<body>
+
+		<a href= "http://webalumnos.tlm.unavarra.es:10738/final/index.php"><img src= "DR_Sports_Logo_Negro.png" class = "logo"></a> <!--hace falta ajustar tamaño!!-->
+		<script>
+				function cargartienda(){
+					var deporte= document.getElementById("buscardeporte").value;
+					location.href= "index.php?accion=tienda&valor=1&deporte=" + deporte;
+			 	}
+		</script>
+		<div id="menu">
+			<ul>
+				<li>
+						<!--<label for="tienda">TIENDA</label> <!-- hacer el onchange-->
+					<select name="tienda" id="buscardeporte" onchange= "cargartienda();">
+						<option value="tienda">TIENDA </option>
+						##filadeporte##
+						<option value="IDdeporte">##deporte##</option>
+						##filadeporte##
+					</select>
+				</li>
+				<li>
+						<a href="index.php?accion=posts&valor=1">PUBLICACIONES</a>
+				</li>
+				<li>
+						<a href="index.php?accion=galeriaFotos&valor=1">GALERIA DE FOTOS</a>		
+				</li>
+				<li>
+						<a href="index.php?accion=perfil&valor=1">PERFIL</a>
+				</li>
+				<li>
+						<a href="index.php?accion=cerrarsesion&valor=1">CERRAR SESION</a>
+				</li>
+			</ul>
+		</div>
+		
+		<h1 class = "titulo">PRODUCTOS DE DR SPORTS</h1>
+
+		<table class = "tabla" border = 2>
+			<tr>
+
+			    <th>Descripción</th>
+
+			    <th>Foto</th>
+
+			    <th>Precio</th>
+
+			    <th>Enlace</th>
+
+			</tr>
+			##filaproducto##
+			<tr>
+				
+				<td>
+					##descripcion##
+				</td>
+				<td>
+					<img src="##fotografia##" width="300" height="350">
+				</td>
+
+				<td>
+					##precio## €
+				</td>
+				<td>
+					<a href="index.php?accion=comprar&valor=3&idproducto=##idproducto##">Ver producto</a><br>
+				</td>
+			</tr>
+			##filaproducto##
+		</table>
+
+	</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<title>DR Sports- Tienda deportiva online</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="author" content="Koldo Aranegui Huarte and Mikel Arrastia">
+		<meta name="description" content="Bienvenidos a la tienda oficial de DR Sports. Descubre la tecnología y comodidad de nuestras prendas.">
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
+	</head>
+	<style>
+		.logo{
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: 20px;
+			margin-bottom: 20px;
+		}
+		h1{
+			text-align: center;
+		}
+		h2{
+			text-align: center;
+		}
+		form{
+			margin-left:35%;
+		}
+		textarea{
+			width:400px;
+			height: 75px;
+		}
+		input{
+			width:435px;
+		}
+	</style>
+	<body>
+		<a href= "http://webalumnos.tlm.unavarra.es:10738/final/index.php"><img src= "DR_Sports_Logo_Negro.png" class = "logo"></a>
+		<h1>PUBLICACIONES ADMINISTRADOR</h1>
+		<br>
+
+		<h2>Crear nueva Publicación</h2>
+		<form action= ""> 
+			<label for="titulo">Título: </label>
+			<input type="text" name="titulo" id="titulo"><br>
+			<br>
+			<label for="descripcion">Descripción: </label>
+			<textarea name="descripcion" id= "descripcion" type="text" size="100000" ></textarea>
+			<br>
+			<button type="button"id="Aniadir">Añadir Publicación</button>
+		</form>
+		<br><br>
+		<form action= ""> 
+			<button type="button"id="Enviar">Visualizar todas las publicaciones</button>
+		</form>
+
+		</br>
+
+		<div id="nuevapublicacion"></div>
+			
+		<br><br>
+
+
+
+		<script>
+			$('#Enviar').click(function(){
+				var ruta= "";
+
+				$.ajax({
+					url:'publicacionesAdmin.php',
+					type: 'POST',
+					data: ruta,
+				})
+				.done(function(res){
+					$('#nuevapublicacion').html(res)
+				})
+				.fail(function(){
+					console.log("error");
+				})
+				.always(function() {
+					console.log("complete");
+				});
+			});
+
+		</script>
+
+		<script>
+			$('#Aniadir').click(function(){
+				var titulo= document.getElementById('titulo').value;
+				var descripcion= document.getElementById('descripcion').value;
+
+				var ruta= "titulo="+titulo+"&descripcion="+descripcion;
+
+				$.ajax({
+					url:'publicacionesAdmin.php',
+					type: 'POST',
+					data: ruta,
+				})
+				.done(function(res){
+					$('#nuevapublicacion').html(res)
+				})
+				.fail(function(){
+					console.log("error");
+				})
+				.always(function() {
+					console.log("complete");
+				});
+			});
+
+		</script>
+
+		
+	</body>
+</html>

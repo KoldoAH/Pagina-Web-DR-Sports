@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<title>DR Sports- Tienda deportiva online</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="author" content="Koldo Aranegui Huarte and Mikel Arrastia">
+		<meta name="description" content="Bienvenidos a la tienda oficial de DR Sports. Descubre la tecnología y comodidad de nuestras prendas.">
+	</head>
+
+	<style>
+		
+		#menu{
+			background-color: #252323;
+		}
+		#menu ul{
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+		#menu ul li{
+			display: inline-block;
+		}
+		#menu ul li a{
+			color: white;
+			display:block;
+			padding: 20px 100px;
+			text-decoration: none;
+		}
+		#menu ul li a:hover{
+			background-color: #adad85;
+		}
+
+		.logo{
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: 20px;
+			margin-bottom: 20px;
+		}
+		.video{
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: 0;
+			margin-bottom: auto;
+		}
+		h1{
+			display: block;
+			margin-left: 750px;
+			margin-right: auto;
+		}
+		.tabla{
+			margin:auto;
+		}
+		.enlace{
+			width: 7%;
+			padding:8px 16px;
+			margin-top:32px;
+			border:1px solid #000;
+			border-radius:5px;
+			display:block;
+			color:#fff;
+			background-color:#adad85;
+			text-align: center;
+			margin:auto;
+		}
+
+	</style>
+	<body>
+		<a href= "http://webalumnos.tlm.unavarra.es:10738/final/index.php"><img src= "DR_Sports_Logo_Negro.png" class = "logo"></a>
+		
+		<div id = "menu">
+			<ul>
+				<li>
+					<a href="index.php?accion=postsadmin&valor=1">PUBLICACIONES</a>
+				</li>
+				<li>
+					<a href="index.php?accion=galeriaFotosAdmin&valor=1">GALERIA DE FOTOS</a>
+				</li>
+				<li>
+					<a href="index.php?accion=pedidos&valor=1">PEDIDOS</a>
+				</li>
+				<li>
+					<a href="index.php?accion=listausuarios&valor=1">LISTA USUARIOS</a>
+				</li>
+				<li>
+					<a href="index.php?accion=perfil&valor=1">PERFIL</a>
+				</li>
+				<li>
+					<a href="index.php?accion=cerrarsesion&valor=1">CERRAR SESION</a>
+				</li>
+			</ul>
+		</div>
+		<h1>Estás registrado como admin</h1>
+		<h1 class = "titulo">Administrar productos</h1><br>
+		<a href="http://webalumnos.tlm.unavarra.es:10738/final/index.php?accion=administrarproductos&valor=1" class = "enlace">Añadir producto</a>
+		<br>
+		<table class = "tabla" border = 2>
+			<tr>
+
+			    <th>Descripción</th>
+
+			    <th>Foto</th>
+
+			    <th>Precio</th>
+
+			    <th>Eliminar</th>
+
+			    <th>Modificar</th>
+
+			</tr>
+			##filaproducto##
+			<tr>
+				
+				<td>
+					##descripcion##
+				</td>
+				<td>
+					<img src="##fotografia##" width="300" height="350">
+				</td>
+
+				<td>
+					##precio## €
+				</td>
+				<td>
+					<a href="index.php?accion=administrarproductos&valor=3&idproducto=##idproducto##">Eliminar producto</a><br>
+				</td>
+				<td>
+					<a href="index.php?accion=administrarproductos&valor=4&idproducto=##idproducto##">Modificar producto</a><br>
+				</td>
+			</tr>
+			##filaproducto##
+		</table>
+	</body>
+</html>
